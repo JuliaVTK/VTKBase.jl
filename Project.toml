@@ -2,3 +2,6 @@ name = "VTKBase"
 uuid = "4004b06d-e244-455f-a6ce-a5f9919cc534"
 authors = ["Juan Ignacio Polanco <juan-ignacio.polanco@cnrs.fr>"]
 version = "0.1.0"
+
+[compat]
+julia = "1.6"
