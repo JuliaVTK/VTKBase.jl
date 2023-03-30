@@ -48,4 +48,6 @@ node_type(::VTKPointData) = "PointData"
 node_type(::VTKCellData) = "CellData"
 node_type(::VTKFieldData) = "FieldData"
 
+include("grid_types.jl")
+
 end
