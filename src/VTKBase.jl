@@ -49,5 +49,6 @@ node_type(::VTKCellData) = "CellData"
 node_type(::VTKFieldData) = "FieldData"
 
 include("grid_types.jl")
+include("mesh_cells.jl")
 
 end
