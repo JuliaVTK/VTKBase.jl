@@ -41,7 +41,7 @@ module;
 - cell types for polygonal datasets are defined in the [`PolyData`](@ref) module.
 
 The `connectivity` argument is a vector or tuple containing the indices of the
-points passed to [`vtk_grid`](@ref) which define this cell.
+points passed to `vtk_grid` which define this cell.
 
 # Example
 

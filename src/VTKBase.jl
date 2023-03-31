@@ -7,7 +7,7 @@ export VTKCellTypes, VTKCellType
 """
     VTKDataType
 
-Union of data types allowed by VTK.
+Union of integer, float and string data types allowed by VTK.
 """
 const VTKDataType = Union{Int8, UInt8, Int16, UInt16, Int32, UInt32,
                           Int64, UInt64, Float32, Float64, String}
