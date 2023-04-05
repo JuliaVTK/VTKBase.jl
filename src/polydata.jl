@@ -40,6 +40,8 @@ end
 
 import .PolyData
 
+export PolyData
+
 const PolyCell{T} = MeshCell{T} where {T <: PolyData.CellType}
 
 Base.eltype(::Type{T}) where {T <: PolyCell} = cell_type(T)
