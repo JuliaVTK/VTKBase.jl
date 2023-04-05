@@ -43,6 +43,8 @@ strings.
 """
 struct VTKFieldData <: AbstractFieldData end
 
+export VTKPointData, VTKCellData, VTKFieldData
+
 # These are the VTK names associated to each data "location".
 node_type(::VTKPointData) = "PointData"
 node_type(::VTKCellData) = "CellData"
