@@ -44,13 +44,26 @@ function VTKCellType(vtkid::Integer)
 end
 
 # Define a VTK cell type
-macro add(ctype, id, nodes=-1)
-    name = string(ctype)
-    quote
-        const $(esc(ctype)) = VTKCellType($name, $id, $nodes)
-        VTK_CELL_TYPES[$id + 1] = $(esc(ctype))
+# Mark it `public` on newer Julia version
+@static if VERSION ≥ v"1.11.0"
+    macro add(ctype, id, nodes=-1)
+        name = string(ctype)
+        quote
+            const $(esc(ctype)) = VTKCellType($name, $id, $nodes)
+            $(Expr(:public, esc(ctype)))
+            VTK_CELL_TYPES[$id + 1] = $(esc(ctype))
+        end
+    end
+else
+    macro add(ctype, id, nodes=-1)
+        name = string(ctype)
+        quote
+            const $(esc(ctype)) = VTKCellType($name, $id, $nodes)
+            VTK_CELL_TYPES[$id + 1] = $(esc(ctype))
+        end
     end
 end
+
 
 # Linear cells
 @add VTK_EMPTY_CELL 0 0
